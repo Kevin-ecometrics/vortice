@@ -162,7 +162,7 @@ export default function TablesManagement({ onError }: TablesManagementProps) {
   };
 
   const generateQRCode = (tableNumber: number) => {
-    const baseUrl = "https://foodhub-software.vercel.app";
+    const baseUrl = "https://vortice-foodhub.e-commetrics.com";
     const url = `${baseUrl}/customer?table=${tableNumber}`;
     const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(
       url

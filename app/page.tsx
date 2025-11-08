@@ -53,7 +53,7 @@ export default function HomePage() {
                 className="w-full bg-green-800 text-white py-4 px-6 rounded-2xl hover:bg-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-3 font-semibold text-lg"
               >
                 <FaMapMarkerAlt className="text-xl" />
-                Ver Sucursal
+                Entrar
               </button>
             </div>
           </div>
@@ -76,11 +76,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <p className="text-gray-600">
             © {new Date().getFullYear()} FoodHub Restaurant. Todos los derechos
-            reservados.
+            reservados by{" "}
+            <a href="https://e-commetrics.com" target="_blank">
+              E-commetrics
+            </a>{" "}
+            .
           </p>
-          <p className="text-gray-500 text-sm mt-2">
-            Desarrollado con ❤️ para tu experiencia gastronómica
-          </p>
+          <p className="text-gray-500 text-sm mt-2"></p>
         </div>
       </footer>
 
