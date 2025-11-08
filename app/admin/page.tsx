@@ -3,7 +3,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import { supabase } from "@/app/lib/supabase/client";
-import { FaChartBar, FaTable, FaBox, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaChartBar,
+  FaTable,
+  FaBox,
+  FaSignOutAlt,
+  FaUser,
+} from "react-icons/fa";
 import {
   AdminSection,
   DailyStats,
@@ -323,6 +329,10 @@ export default function AdminPage() {
     setSelectedDate(new Date());
   };
 
+  const handleWaiter = () => {
+    window.location.href = "/waiter";
+  };
+
   const handleError = (errorMessage: string) => {
     setError(errorMessage);
   };
@@ -346,13 +356,22 @@ export default function AdminPage() {
                 </h1>
               </div>
             </div>
-            <button
-              onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition"
-            >
-              <FaSignOutAlt />
-              Cerrar Sesión
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={handleWaiter}
+                className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition"
+              >
+                <FaUser />
+                Waiter
+              </button>
+              <button
+                onClick={handleLogout}
+                className="flex items-center gap-2 px-4 py-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-lg transition"
+              >
+                <FaSignOutAlt />
+                Cerrar Sesión
+              </button>
+            </div>
           </div>
         </div>
       </header>

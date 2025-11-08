@@ -5,7 +5,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 export default function HomePage() {
   const handleViewLocation = () => {
     // Por el momento redirige a un anchor, puedes cambiar esto después
-    window.location.href = "#location";
+    window.location.href = "/admin";
   };
 
   return (

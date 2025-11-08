@@ -99,6 +99,6 @@ export interface ProductFormData {
 
 // Credenciales fijas del administrador
 export const ADMIN_CREDENTIALS = {
-  username: "admin",
-  password: "restaurant2024",
+  username: "vortice",
+  password: "restaurant2025",
 };
