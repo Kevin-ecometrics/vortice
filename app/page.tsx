@@ -77,8 +77,12 @@ export default function HomePage() {
           <p className="text-gray-600">
             © {new Date().getFullYear()} FoodHub Restaurant. Todos los derechos
             reservados by{" "}
-            <a href="https://e-commetrics.com" target="_blank">
-              E-commetrics
+            <a
+              className="text-green-500 hover:text-green-700"
+              href="https://e-commetrics.com"
+              target="_blank"
+            >
+              e-commetrics
             </a>{" "}
             .
           </p>

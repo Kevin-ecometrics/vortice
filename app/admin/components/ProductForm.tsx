@@ -89,7 +89,7 @@ export default function ProductForm({
               <option value="Lunch">Lunch</option>
               <option value="Dinner">Dinner</option>
               <option value="Combos">Combos</option>
-              <option value="Refill">Refill</option>
+              <option value="Drinks">Drinks</option>
             </select>
           </div>
           <div>

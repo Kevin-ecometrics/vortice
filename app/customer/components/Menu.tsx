@@ -41,8 +41,8 @@ const CATEGORIES = [
     description: "Tus items recientes de esta orden",
   },
   {
-    id: "refill",
-    name: "Refill",
+    id: "drinks",
+    name: "Drinks",
     icon: "🥤",
     description: "Refill de bebidas",
   },
@@ -449,7 +449,7 @@ export default function MenuPage() {
         return getPopularItems();
       default:
         const categoryMap: { [key: string]: string } = {
-          refill: "Refill",
+          drinks: "Drinks",
           combos: "Combos",
           breakfast: "Breakfast",
           lunch: "Lunch",
@@ -614,7 +614,35 @@ export default function MenuPage() {
 
       <div className="bg-white shadow-sm sticky top-16 z-20 overflow-x-auto">
         <div className="flex gap-2 px-4 py-4 max-w-7xl mx-auto">
-          {CATEGORIES.map((category) => (
+          {CATEGORIES.filter((category) => {
+            // Determinar cuántos productos hay en esta categoría
+            let productsCount = 0;
+
+            switch (category.id) {
+              case "favorites":
+                productsCount = favoriteItems.length;
+                break;
+              case "repite-item":
+                productsCount = recentItems.length;
+                break;
+              case "popular":
+                productsCount = getPopularItems().length;
+                break;
+              default:
+                const categoryMap: { [key: string]: string } = {
+                  drinks: "Drinks",
+                  combos: "Combos",
+                  breakfast: "Breakfast",
+                  lunch: "Lunch",
+                  dinner: "Dinner",
+                };
+                productsCount = products.filter(
+                  (product) => product.category === categoryMap[category.id]
+                ).length;
+            }
+
+            return productsCount > 0; // Solo mostrar categorías con productos
+          }).map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
